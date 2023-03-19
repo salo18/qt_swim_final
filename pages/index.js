@@ -1,5 +1,4 @@
 // import Image from "next/image";
-// import styles from "./page.module.css";
 import Head from "next/head";
 const { MongoClient } = require("mongodb");
 import formatDistance from "date-fns/formatDistance";

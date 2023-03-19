@@ -1,7 +1,5 @@
 fix:
-MongoServerSelectionError: connection <monitor> to X closed
-
-- instead of GSP, send last 4 samples to api endpoint and get the values from there to the homepage? 
+- instead of GSP, send last 4 samples to api endpoint and get the values from there to the homepage?
 
 
 - deploy v1
