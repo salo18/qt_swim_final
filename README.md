@@ -1,4 +1,5 @@
 fix:
+-- CRON job not running on vercel -- incorrect chromium version
 - instead of GSP, send last 4 samples to api endpoint and get the values from there to the homepage?
 
 
