@@ -14,7 +14,8 @@ export default async function returnReading(req, res) {
       const db = client.db("db");
       const coll = db.collection("samples");
 
-      const result = await coll.insertOne(lakeReading);
+      // const result = await coll.insertOne(lakeReading);
+      await coll.insertOne(lakeReading);
 
     } finally {
       // close client when finished

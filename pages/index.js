@@ -3,6 +3,11 @@ import Head from "next/head";
 const { MongoClient } = require("mongodb");
 import formatDistance from "date-fns/formatDistance";
 import { useRouter } from "next/router";
+// import cron from 'node-cron';
+
+// import '../lib/cron';
+// import '/lib/cron';
+// import {cron} from '../lib/cron'
 
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
@@ -39,6 +44,8 @@ export default function Home({ samples }) {
   const refreshData = () => {
     router.replace(router.asPath);
   };
+
+  // cron.start();
 
   return (
     <div className="container">
