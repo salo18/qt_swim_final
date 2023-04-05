@@ -4,6 +4,5 @@
       "path": "/api/recent",
       "schedule": "0 10 * * *"
     }
-  ],
-  "builds": [{"src": "index.js", "use": "@vercel/node"}]
+  ]
 }
