@@ -10,6 +10,12 @@ read the docs open on chrome
 - instead of GSP, send last 4 samples to api endpoint and get the values from there to the homepage?
 
 
+challenge with this project
+- learned how to use puppeteer -- could not get it it to work with chromium and the different versions
+- switched to playwright -- now getting an error because serverless function exceeds 50MB
+
+
+
 - deploy v1
 - make front end (one page)
   - explain the project
