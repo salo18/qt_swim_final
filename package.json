@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "chrome-aws-lambda": "^5.4.0",
+    "chrome-aws-lambda": "^6.0.0",
     "date-fns": "^2.29.3",
     "eslint": "8.36.0",
     "eslint-config-next": "13.2.4",
