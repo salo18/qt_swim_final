@@ -1,5 +1,12 @@
 fix:
--- CRON job not running on vercel -- incorrect chromium version
+START HERE:
+-- CRON job not running on vercel -- incorrect chromium version?
+  -- api/test is working on deployment so definitely an issue on /api/recent with chromium version
+
+TRY // import { NextApiRequest, NextApiResponse } from 'next' on api/recent?
+read the docs open on chrome
+
+
 - instead of GSP, send last 4 samples to api endpoint and get the values from there to the homepage?
 
 

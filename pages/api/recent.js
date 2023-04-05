@@ -1,3 +1,5 @@
+// import { NextApiRequest, NextApiResponse } from 'next'
+
 import { getLakeReading } from "../../lib/scraper";
 const { MongoClient } = require("mongodb");
 
