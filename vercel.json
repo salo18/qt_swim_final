@@ -4,5 +4,8 @@
       "path": "/api/recent",
       "schedule": "0 10 * * *"
     }
-  ]
+  ],
+
+  "version": 2,
+  "builds": [ { "src": "next.config.js", "use": "@nextjs/vercel-builder@0.22.1" } ] 
 }
