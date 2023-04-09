@@ -13,6 +13,13 @@ read the docs open on chrome
 challenge with this project
 - learned how to use puppeteer -- could not get it it to work with chromium and the different versions
 - switched to playwright -- now getting an error because serverless function exceeds 50MB
+- could not get site to deploye to vercel because the build was too big. It took me MANY attempts to solve this issue but was able to deploy using older versions of the packages that aren't as big as newer deployments. The magic combination was:
+--- "chrome-aws-lambda": "6.0.0",
+--- "next": "12.3.1",
+--- "puppeteer-core": "6.0.0"
+thanks to these articles that took a while to find but solved the problem:
+https://gist.github.com/agungjk/ff542367470d156478f7381af2cf7e60
+https://gist.github.com/kettanaito/56861aff96e6debc575d522dd03e5725#step-1-install-dependencies
 
 
 
