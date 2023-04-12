@@ -5,26 +5,32 @@ const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 
 export default async function returnReading(req, res) {
-  const lakeReading = await getLakeReading();
 
-  async function run() {
-    try {
-      await client.connect();
-      // connect to db
-      const db = client.db("db");
-      const coll = db.collection("samples");
+  try {
+    const lakeReading = await getLakeReading();
 
-      // const result = await coll.insertOne(lakeReading);
-      await coll.insertOne(lakeReading);
+    async function run() {
+      try {
+        await client.connect();
+        // connect to db
+        const db = client.db("db");
+        const coll = db.collection("samples");
 
-    } finally {
-      // close client when finished
-      await client.close();
+        // const result = await coll.insertOne(lakeReading);
+        await coll.insertOne(lakeReading);
+
+      } finally {
+        // close client when finished
+        await client.close();
+      }
     }
-  }
-  run().catch(console.dir);
+    run().catch(console.dir);
 
-  res.status(200).json( lakeReading );
+    res.status(200).json( lakeReading );
+  } catch(err) {
+    res.status(500).json({ error: "internal error", message: err });
+    console.log(err);
+  }
 }
 
 
