@@ -66,7 +66,7 @@ export default function Home({ samples }) {
           {samples.map(sample => {
             return (
               <div key={sample.cronUpdateDate} className="card">
-                <h3>{sample.lawaSampleDate}</h3>
+                {/* <h3>{sample.lawaSampleDate}</h3> */}
                 <p>
                   Lake Status: <strong>{sample.status}</strong>
                 </p>

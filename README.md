@@ -1,5 +1,12 @@
 fix:
 START HERE:
+
+--- once api/recent is returning the correct data, need to get the cron to work
+  - is it adding a document at the right interval to mongodb?
+  - get this to work locally then get it to work when deeployed to vercel - gpt had some ideas for how to do this but vercel's native cronjobs might work if the issues are fixed
+
+
+
 -- CRON job not running on vercel -- incorrect chromium version?
   -- api/test is working on deployment so definitely an issue on /api/recent with chromium version
 
