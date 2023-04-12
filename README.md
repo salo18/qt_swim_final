@@ -1,29 +1,11 @@
-fix:
-START HERE:
+Next steps:
+DONE - make cron job that checks the db for the last two readings
+  --- if the second to last reading has a different `status` value, send a message saying that the status has changed
+- set up sign up form and contacts
+  - mailgun?
+https://www.mailgun.com/products/send/email-api/
 
-
-
--- CRON job not running on vercel -- incorrect chromium version?
-  -- api/test is working on deployment so definitely an issue on /api/recent with chromium version
-
-TRY // import { NextApiRequest, NextApiResponse } from 'next' on api/recent?
-read the docs open on chrome
-
-
-- instead of GSP, send last 4 samples to api endpoint and get the values from there to the homepage?
-
-
-challenge with this project
-- learned how to use puppeteer -- could not get it it to work with chromium and the different versions
-- switched to playwright -- now getting an error because serverless function exceeds 50MB
-- could not get site to deploye to vercel because the build was too big. It took me MANY attempts to solve this issue but was able to deploy using older versions of the packages that aren't as big as newer deployments. The magic combination was:
---- "chrome-aws-lambda": "6.0.0",
---- "next": "12.3.1",
---- "puppeteer-core": "6.0.0"
-thanks to these articles that took a while to find but solved the problem:
-https://gist.github.com/agungjk/ff542367470d156478f7381af2cf7e60
-https://gist.github.com/kettanaito/56861aff96e6debc575d522dd03e5725#step-1-install-dependencies
-
+use Twilio or Mailgun? 
 
 
 - deploy v1
@@ -38,6 +20,22 @@ https://gist.github.com/kettanaito/56861aff96e6debc575d522dd03e5725#step-1-insta
   - use twilio or other service to text users when there is a new reading from Otago Council
   - only set alerts if the lake status has changed
 - make 404
+
+
+challenge with this project
+- learned how to use puppeteer -- could not get it it to work with chromium and the different versions
+- switched to playwright -- now getting an error because serverless function exceeds 50MB
+- could not get site to deploy to vercel because the build was too big. It took me MANY attempts to solve this issue but was able to deploy using older versions of the packages that aren't as big as newer deployments. The magic combination was:
+--- "chrome-aws-lambda": "6.0.0",
+--- "next": "12.3.1",
+--- "puppeteer-core": "6.0.0"
+thanks to these articles that took a while to find but solved the problem:
+https://gist.github.com/agungjk/ff542367470d156478f7381af2cf7e60
+https://gist.github.com/kettanaito/56861aff96e6debc575d522dd03e5725#step-1-install-dependencies
+
+- had a hard time getting the cron job to run on vercel. I could get the cron jobs to work locally but not in deployment. I used tryslater.com and it was really easy to set up.
+
+
 
 V2 of this app...
 - show time to next cron job (next check will be in X hours )
