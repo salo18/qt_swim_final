@@ -6,7 +6,7 @@ export default function Terms() {
       <Link href="/">Back to home</Link>
       <h1>Terms and Conditions</h1>
 
-      <p>These terms and conditions ("Terms") govern your use of the qtwateralert.co.nz website (the "Website"). By accessing or using the Website, you agree to be bound by these Terms.</p>
+      <p>These terms and conditions (&quot;Terms&quot;) govern your use of the qtwateralert.co.nz website (the &quot;Website&quot;). By accessing or using the Website, you agree to be bound by these Terms.</p>
 
       <p>1. Use of Website: The Website is provided for your personal and non-commercial use. You may not modify, copy, distribute, transmit, display, perform, reproduce, publish, license, create derivative works from, transfer, or sell any information, software, products, or services obtained from the Website.</p>
 
@@ -16,7 +16,7 @@ export default function Terms() {
 
       <p>4. Intellectual Property: The Website and its content, including but not limited to text, graphics, logos, images, and software, are the property of qtwateralert.co.nz or its licensors and are protected by copyright, trademark, and other intellectual property laws. You may not use any of the Website's content without the prior written consent of qtwateralert.co.nz.</p>
 
-      <p>5. Disclaimer of Warranties: The Website and its content are provided "as is" and without warranty of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
+      <p>5. Disclaimer of Warranties: The Website and its content are provided &quot;as is&quot; and without warranty of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
 
       <p>6. Limitation of Liability: In no event shall qtwateralert.co.nz be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with the use of the Website or its content.</p>
 
