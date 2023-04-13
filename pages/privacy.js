@@ -6,7 +6,7 @@ export default function Privacy() {
       <Link href="/">Back to home</Link>
       <h1>Privacy Policy</h1>
 
-      <p>At qtwateralert.co.nz, we respect the privacy of our users. This Privacy Policy explains how we collect, use, and disclose your personal information when you use our website (the "Website").</p>
+      <p>At qtwateralert.co.nz, we respect the privacy of our users. This Privacy Policy explains how we collect, use, and disclose your personal information when you use our website (the &quot;Website&quot;).</p>
 
       <p>1. Information We Collect: We collect personal information that you voluntarily provide to us, such as your name and email address. We may also collect non-personal information, such as your IP address and browser type.</p>
 
@@ -18,7 +18,7 @@ export default function Privacy() {
 
       <p>5. Third-Party Websites: The Website may contain links to third-party websites. We are not responsible for the privacy practices or content of those websites.</p>
 
-      <p>6. Children's Privacy: The Website is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under the age of 13.</p>
+      <p>6. Children&apos;s Privacy: The Website is not intended for use by children under the age of 13. We do not knowingly collect personal information from children under the age of 13.</p>
 
       <p>7. Security: We take reasonable measures to protect your personal information from unauthorized access or disclosure.</p>
 

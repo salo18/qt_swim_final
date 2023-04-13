@@ -12,15 +12,15 @@ export default function Terms() {
 
       <p>2. User Content: You may post content on the Website, such as comments or reviews, but you are solely responsible for the content of any such material. You agree not to post any material that is defamatory, obscene, or otherwise offensive.</p>
 
-      <p>3. Privacy Policy: The Website's privacy policy is incorporated into these Terms by reference.</p>
+      <p>3. Privacy Policy: The Website&apos;s privacy policy is incorporated into these Terms by reference.</p>
 
-      <p>4. Intellectual Property: The Website and its content, including but not limited to text, graphics, logos, images, and software, are the property of qtwateralert.co.nz or its licensors and are protected by copyright, trademark, and other intellectual property laws. You may not use any of the Website's content without the prior written consent of qtwateralert.co.nz.</p>
+      <p>4. Intellectual Property: The Website and its content, including but not limited to text, graphics, logos, images, and software, are the property of qtwateralert.co.nz or its licensors and are protected by copyright, trademark, and other intellectual property laws. You may not use any of the Website&apos;s content without the prior written consent of qtwateralert.co.nz.</p>
 
       <p>5. Disclaimer of Warranties: The Website and its content are provided &quot;as is&quot; and without warranty of any kind, either express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, or non-infringement.</p>
 
       <p>6. Limitation of Liability: In no event shall qtwateralert.co.nz be liable for any direct, indirect, incidental, special, or consequential damages arising out of or in connection with the use of the Website or its content.</p>
 
-      <p>7. Indemnification: You agree to indemnify, defend, and hold harmless qtwateralert.co.nz and its affiliates, officers, directors, employees, agents, and licensors from and against any and all claims, liabilities, damages, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising from your use of the Website or your breach of these Terms.</p>
+      <p>7. Indemnification: You agree to indemnify, defend, and hold harmless qtwateralert.co.nz and its affiliates, officers, directors, employees, agents, and licensors from and against any and all claims, liabilities, damages, losses, costs, expenses, or fees (including reasonable attorneys&apos; fees) arising from your use of the Website or your breach of these Terms.</p>
 
       <p>8. Termination: qtwateralert.co.nz may terminate your access to the Website at any time, for any reason or no reason, without notice.</p>
 
