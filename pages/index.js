@@ -3,6 +3,7 @@ import Head from "next/head";
 const { MongoClient } = require("mongodb");
 import formatDistance from "date-fns/formatDistance";
 import { useRouter } from "next/router";
+import Link from "next/link";
 // import cron from 'node-cron';
 
 // import '../lib/cron';
@@ -86,6 +87,9 @@ export default function Home({ samples }) {
         <a href="/" target="_blank" rel="noopener noreferrer">
           Created with &#x1F499; by Salo
         </a>
+
+        <Link href="/privacy" className='footerLink'>Privacy</Link>
+        <Link href="/terms" className='footerLink'>Terms and Conditions</Link>
       </footer>
     </div>
   );
