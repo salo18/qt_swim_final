@@ -5,7 +5,6 @@ const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 
 export default async function returnReading(req, res) {
-
   try {
     const lakeReading = await getLakeReading();
 
