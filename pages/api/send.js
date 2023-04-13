@@ -3,13 +3,13 @@ const { MongoClient } = require("mongodb");
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 
-const formData = require('form-data');
-const Mailgun = require('mailgun.js');
-const mailgun = new Mailgun(formData);
-const mg = mailgun.client({
-	username: 'api',
-	key: process.env.MAILGUN_KEY,
-});
+// const formData = require('form-data');
+// const Mailgun = require('mailgun.js');
+// const mailgun = new Mailgun(formData);
+// const mg = mailgun.client({
+// 	username: 'api',
+// 	key: process.env.MAILGUN_KEY,
+// });
 
 
 export default async function inspectDB(req, res) {
@@ -28,15 +28,20 @@ export default async function inspectDB(req, res) {
 
         // if the last two readings don't have the same value, send a message
         if (lastTwo[0] !== lastTwo[1] && lastTwo[0] !== 'No recent data' && lastTwo[1] !== 'No recent data') {
-          mg.messages
-            .create(sandboxc3553884a3ad44c6a6c931be982adc93.mailgun.org, {
-              from: "Mailgun Sandbox <postmaster@sandboxc3553884a3ad44c6a6c931be982adc93.mailgun.org>",
-              to: [process.env.MY_EMAIL],
-              subject: "Hello",
-              text: "Testing some Mailgun awesomness!",
-            })
-            .then(msg => console.log(msg)) // logs response data
-            .catch(err => console.log(err)); // logs any error`;
+          // SEND TEXT
+          
+
+
+          // SEND EMAIL
+          // mg.messages
+          //   .create(sandboxc3553884a3ad44c6a6c931be982adc93.mailgun.org, {
+          //     from: "Mailgun Sandbox <postmaster@sandboxc3553884a3ad44c6a6c931be982adc93.mailgun.org>",
+          //     to: [process.env.MY_EMAIL],
+          //     subject: "Hello",
+          //     text: "Testing some Mailgun awesomness!",
+          //   })
+          //   .then(msg => console.log(msg)) // logs response data
+          //   .catch(err => console.log(err)); // logs any error`;
         }
         console.log(lastTwo);
         console.log(mongoArr);
