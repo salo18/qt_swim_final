@@ -11,7 +11,6 @@ const client = new MongoClient(uri);
 // 	key: process.env.MAILGUN_KEY,
 // });
 
-
 export default async function sendMessage(req, res) {
   try {
     let lastTwo;
