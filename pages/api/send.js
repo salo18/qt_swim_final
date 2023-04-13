@@ -12,7 +12,7 @@ const client = new MongoClient(uri);
 // });
 
 
-export default async function inspectDB(req, res) {
+export default async function sendMessage(req, res) {
   try {
     let lastTwo;
     let mongoArr;
@@ -29,7 +29,7 @@ export default async function inspectDB(req, res) {
         // if the last two readings don't have the same value, send a message
         if (lastTwo[0] !== lastTwo[1] && lastTwo[0] !== 'No recent data' && lastTwo[1] !== 'No recent data') {
           // SEND TEXT
-          
+          console.log('send message');
 
 
           // SEND EMAIL
