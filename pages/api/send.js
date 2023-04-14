@@ -11,7 +11,22 @@ const client = new MongoClient(uri);
 // 	key: process.env.MAILGUN_KEY,
 // });
 
-export default async function sendMessage(req, res) {
+
+const nodeMailer = require('nodemailer');
+
+// CONNECT TO DB and get list of all emails
+const emailList = [];
+
+// async function sendEmail() {
+
+// }
+
+// async function lastTwoDocs() {
+
+// }
+
+
+export default async function main(req, res) {
   try {
     let lastTwo;
     let mongoArr;
@@ -27,20 +42,38 @@ export default async function sendMessage(req, res) {
 
         // if the last two readings don't have the same value, send a message
         if (lastTwo[0] !== lastTwo[1] && lastTwo[0] !== 'No recent data' && lastTwo[1] !== 'No recent data') {
-          // SEND TEXT
-          console.log('send message');
-
 
           // SEND EMAIL
-          // mg.messages
-          //   .create(sandboxc3553884a3ad44c6a6c931be982adc93.mailgun.org, {
-          //     from: "Mailgun Sandbox <postmaster@sandboxc3553884a3ad44c6a6c931be982adc93.mailgun.org>",
-          //     to: [process.env.MY_EMAIL],
-          //     subject: "Hello",
-          //     text: "Testing some Mailgun awesomness!",
-          //   })
-          //   .then(msg => console.log(msg)) // logs response data
-          //   .catch(err => console.log(err)); // logs any error`;
+
+          async function main() {
+            let transporter = nodemailer.createTransport({
+              host: "smtp.gmail.com",
+              port: 465,
+              secure: true,
+              auth: {
+                user: process.env.MY_EMAIL,
+                pass: process.env.MY_EMAIL_PW,
+              },
+            });
+
+            let info = await transporter.sendMail({
+              from: `QT SWIM <${process.env.MY_EMAIL}>`,
+              to: emailList, // Mails to array of recipients
+              subject: "Testing, testing, 123",
+              html: `
+              <h1>Hello there</h1>
+              <p>Isn't NodeMailer useful?</p>
+              `,
+            });
+
+            console.log(info.messageId);
+            console.log(info.accepted); // Array of emails that were successful
+            console.log(info.rejected); // Array of unsuccessful emails
+          }
+
+          main()
+          .catch(err => console.log(err));
+
         }
         console.log(lastTwo);
         console.log(mongoArr);

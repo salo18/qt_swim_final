@@ -5,7 +5,17 @@ DONE - make cron job that checks the db for the last two readings
   - mailgun?
 https://www.mailgun.com/products/send/email-api/
 
-use Twilio or Mailgun? 
+use Twilio or Mailgun?
+
+Todo:
+
+- uninstall
+form-data
+mailgun
+
+- update privacy and terms pages to new name
+- add image to homepage
+
 
 
 - deploy v1

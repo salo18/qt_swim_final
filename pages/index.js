@@ -46,7 +46,9 @@ export default function Home({ samples }) {
     router.replace(router.asPath);
   };
 
-  // cron.start();
+  const submitForm = () => {
+
+  }
 
   return (
     <div className="container">
@@ -56,12 +58,29 @@ export default function Home({ samples }) {
       </Head>
 
       <main>
-        <h1 className="title">QT Water Alert</h1>
+        <h1 className="title">Welcome to QT Swim</h1>
 
-        <h2 className="subtitle">Welcome to your ?</h2>
+        <p>For those who love swimming in Lake Wakatipu</p>
+
+        <p>Every few weeks, <a href='https://www.lawa.org.nz/'>LAWA</a> publishes the results of their water testing for beautiful Lake Wakatipu. Rather than <a href='https://www.lawa.org.nz/explore-data/otago-region/swimming/lake-wakatipu-at-frankton-bay/swimsite'>check this website</a>, sign up to get notified the next time a water quality sample for Lake Wakatipu is published.</p>
+
+        <p>They usually test once or twice a month so you will only get notified when there is a new test.</p>
+
+        <p>Sign up for a free:</p>
+        <form>
+          <input
+            type='text'
+            placeholder='Name'
+          />
+           <input
+            type='email'
+            placeholder='Email'
+          />
+          <button onClick={submitForm}>Keen to swim!</button>
+        </form>
 
         <h2>Recent Samples:</h2>
-        <button onClick={refreshData}>Refresh Data</button>
+        {/* <button onClick={refreshData}>Refresh Data</button> */}
 
         <div className="grid">
           {samples.map(sample => {
@@ -72,22 +91,17 @@ export default function Home({ samples }) {
                   Lake Status: <strong>{sample.status}</strong>
                 </p>
                 <p>
-                  Time since last check:{" "}
+                  Time since we last checked LAWA:{" "}
                   {formatDistance(sample.cronUpdateDate, new Date())}
                 </p>
               </div>
             );
           })}
         </div>
-
-        <p className="description">The problem:</p>
       </main>
 
       <footer>
-        <a href="/" target="_blank" rel="noopener noreferrer">
-          Created with &#x1F499; by Salo
-        </a>
-
+        <p>Created with &#x1F499; by Salo</p>
         <Link href="/privacy" className='footerLink'>Privacy</Link>
         <Link href="/terms" className='footerLink'>Terms and Conditions</Link>
       </footer>
