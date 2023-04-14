@@ -1,36 +1,15 @@
 Next steps:
-DONE - make cron job that checks the db for the last two readings
-  --- if the second to last reading has a different `status` value, send a message saying that the status has changed
-- set up sign up form and contacts
-  - mailgun?
-https://www.mailgun.com/products/send/email-api/
+- set up React form and add new users to DB
+- check that email goes to the list
 
-use Twilio or Mailgun?
-
-Todo:
-
-- uninstall
-form-data
-mailgun
-
+- why isn't status being reported properly? investigate scraper.js
 - update privacy and terms pages to new name
 - add image to homepage
+- buy domain and connect to vercel
+- if the second to last reading has a different `status` value, send a message saying that the status has changed
 
-
-
-- deploy v1
-- make front end (one page)
-  - explain the project
-  - sign up form
-  - most recent data
-    - status of last check
-    - when last updated by Otago Council
-    - when last checked by our app
-- set up alerts
-  - use twilio or other service to text users when there is a new reading from Otago Council
-  - only set alerts if the lake status has changed
-- make 404
-
+DONE - make cron job that checks the db for the last two readings
+DONE - write email content
 
 challenge with this project
 - learned how to use puppeteer -- could not get it it to work with chromium and the different versions
@@ -66,14 +45,20 @@ This app scrapes data from https://www.lawa.org.nz/explore-data/otago-region/swi
 helpful links:
 https://www.touchstone.org.nz/duck-itch?fbclid=IwAR3WtJK6HchQxJHzviMYzdxJBeCMTJpcx9pH0yjkfEWnY5fm4D5Rcw8M-c4
 
+this was helpful to make nodemailer work:
+https://github.com/nodemailer/nodemailer/issues/830#issuecomment-817279450
+
+
 What I learned with this project
 - how to scrape data with puppeteer
 - how to make a cron job
   - crontab was helpful https://crontab.guru/#0_*_*_*_*
 - basics of package.json configuration
-- first time using React Context in a project
 - first time using Next.js
-- how to deploy an app
+- how to deploy an app to Vercel
+- lots more experience working with MongoDB
+- setting up email and basic knowledge of SMTP
+
 
 I originally made this in Express and used React Context. Scrapped that approach once I started learning NextJs since I realized Next could handle both frontend and backend.
 
