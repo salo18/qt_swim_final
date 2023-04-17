@@ -97,7 +97,7 @@ export default function Home({ samples }) {
           width={850}
           height={300}
         />
-        <p className='img-src'>Image courtesy of Dall-E-2</p>
+        <p className='img-src'>Image courtesy of <a href='https://openai.com/product/dall-e-2'>Dall-E 2</a></p>
 
         <p>
           Every few weeks, <a href="https://www.lawa.org.nz/">LAWA</a> tests the water quality for beautiful Lake Wakatipu. Rather
