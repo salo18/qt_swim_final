@@ -26,9 +26,10 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 60%;
+  width: 80%;
   margin-bottom: 0;
 }
+
 
 .terms-privacy-ctn {
   width: 90%;
@@ -196,6 +197,13 @@ code {
   .grid {
     width: 100%;
     flex-direction: column;
+  }
+}
+
+
+@media (max-width: 500px) {
+  main {
+    width: 95%;
   }
 }
 
