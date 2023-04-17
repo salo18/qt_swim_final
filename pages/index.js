@@ -126,7 +126,7 @@ export default function Home({ samples }) {
             <p className="error-msg">Please enter a valid email address.</p>
           )}
           <button type="submit" disabled={!isValid}>
-            Let's swim!
+            Let&apos;s swim!
           </button>
         </form>
 
