@@ -5,16 +5,6 @@ const client = new MongoClient(uri);
 
 const nodemailer = require("nodemailer");
 
-
-// async function sendEmail() {
-
-// }
-
-// async function lastTwoDocs() {
-
-// }
-
-
 export default async function main(req, res) {
   try {
     let lastTwo;
@@ -30,7 +20,6 @@ export default async function main(req, res) {
 
         // do it by date?
         lastTwo = mongoArr.map(x => x.status);
-
 
         // populate email list
         const users = db.collection('users');

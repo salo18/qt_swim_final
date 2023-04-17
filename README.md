@@ -1,6 +1,6 @@
 Next steps:
-- set up React form and add new users to DB
 - check that email goes to the list
+- set up cron job for api/send
 
 - why isn't status being reported properly? investigate scraper.js
 - update privacy and terms pages to new name
@@ -10,6 +10,8 @@ Next steps:
 
 DONE - make cron job that checks the db for the last two readings
 DONE - write email content
+DONE - set up React form and add new users to DB
+
 
 challenge with this project
 - learned how to use puppeteer -- could not get it it to work with chromium and the different versions
@@ -24,6 +26,8 @@ https://gist.github.com/kettanaito/56861aff96e6debc575d522dd03e5725#step-1-insta
 
 - had a hard time getting the cron job to run on vercel. I could get the cron jobs to work locally but not in deployment. I used tryslater.com and it was really easy to set up.
 
+
+I didn't worry too much about folder structure too much. The one React form component is not in its own file and neither are the CSS styles for the form. I wanted to move fast and I chose to ignore folder structure conventions since it is a very small project.
 
 
 V2 of this app...
@@ -47,6 +51,7 @@ https://www.touchstone.org.nz/duck-itch?fbclid=IwAR3WtJK6HchQxJHzviMYzdxJBeCMTJp
 
 this was helpful to make nodemailer work:
 https://github.com/nodemailer/nodemailer/issues/830#issuecomment-817279450
+https://openjavascript.info/2023/01/10/nodemailer-tutorial-send-emails-in-node-js/
 
 
 What I learned with this project
