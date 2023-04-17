@@ -1,5 +1,4 @@
 const { MongoClient } = require("mongodb");
-
 const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 
@@ -7,34 +6,25 @@ const nodemailer = require("nodemailer");
 
 export default async function main(req, res) {
   try {
-    let lastTwo;
-    let mongoArr;
-
-    async function run() {
+    async function connectDB() {
       try {
         await client.connect();
-        // connect to db
         const db = client.db("db");
         const samples = db.collection("samples");
-        mongoArr =  await samples.find().sort({cronUpdateDate: -1}).limit(2).toArray();
 
-        // do it by date?
-        lastTwo = mongoArr.map(x => x.status);
+        // get values of last two samples
+        let mongoArr =  await samples.find().sort({cronUpdateDate: -1}).limit(2).toArray();
+        let lastTwo = mongoArr.map(x => [x.status, x.lawaSampleDate]);
 
         // populate email list
         const users = db.collection('users');
         let rawList = await users.find().toArray();
-
         let emailList = rawList.map(x => x.email);
-        console.log(emailList);
 
-        // if the last two readings don't have the same value, send a message
-        // if (lastTwo[0] !== lastTwo[1] && lastTwo[0] !== 'No recent data' && lastTwo[1] !== 'No recent data') {
-
-        if (1) {
-          // SEND EMAIL
-
-          async function main() {
+        // if there is a new reading with a valid date (not null) AND the last two dates are not the same, send a message
+        if (lastTwo[0][1] !== null && lastTwo[0][0] !== 'No recent data' && lastTwo[0][1] !== lastTwo[1][1]) {
+        // if (1) {
+          async function sendEmail() {
             try {
               let transporter = nodemailer.createTransport({
                 host: process.env.SMTP_HOST,
@@ -46,20 +36,23 @@ export default async function main(req, res) {
                 },
               });
 
-              const info = await transporter.sendMail({
+              const message = {
                 from: `QT SWIM <${process.env.MY_EMAIL}>`,
-                to: emailList,
+                to: process.env.MY_EMAIL,
+                bcc: emailList,
                 subject: "New water quality report for Frankton Beach",
                 html: `
-                <h1>Hey there,</h1>
-                <p>We noticed that council took a new water sample for Frankton Beach.</p>
-                <p>Here is the status: ${lastTwo[1]} </p>
+                <p>Hey there,</p>
+                <p>We noticed that council took a new water sample on ${lastTwo[0][1]} for Frankton Beach.</p>
+                <p>Here is the status: ${lastTwo[0][0]} </p>
                 <p>Enjoy your time on the lake you legend!</p>
                 <p>Cheers,</p>
                 <p>QT Swim</p>
                 <p>PS want to unsubscribe? No worries. Just reply "unsubscribe" and we'll take you off the list.</p>
                 `,
-              });
+              }
+
+              const info = await transporter.sendMail(message);
 
               // console.log(info.messageId);
               // console.log(info.accepted); // Array of emails that were successful
@@ -68,14 +61,13 @@ export default async function main(req, res) {
               console.log(err)
             }
           }
-          main()
+          sendEmail()
         }
       } finally {
-        // close client when finished
         await client.close();
       }
     }
-    run().catch(console.dir);
+    connectDB().catch(console.dir);
 
     res.status(200).json({ message: 'email sent successfully'});
   } catch (err) {

@@ -1,4 +1,4 @@
-// import Image from "next/image";
+import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
@@ -58,25 +58,25 @@ export default function Home({ samples }) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    fetch('/api/email', {
-      method: 'POST',
+    fetch("/api/email", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
+        "Content-Type": "application/json",
       },
       body: JSON.stringify({ email }),
     })
       .then((response) => {
         if (!response.ok) {
-          throw new Error('Failed to save email');
+          throw new Error("Failed to save email");
         }
-        alert("Success! You're in :)");
+        alert("Success! You're in :) Make sure to check your spam folder.");
       })
       .catch((error) => {
         console.error(error);
-        alert("Oops that didn't work, try again");
+        alert("Ooops that didn't work, try again");
       });
 
-    setEmail('');
+    setEmail("");
   }
 
   return (
@@ -91,35 +91,42 @@ export default function Home({ samples }) {
 
         <p>For those who love swimming in Lake Wakatipu.</p>
 
+        <Image
+          src='/qtswim.png'
+          alt='view of Lake Wakatipu with Kelvin Heights Peninsula in the background'
+          width={850}
+          height={300}
+        />
+        <p className='img-src'>Image courtesy of Dall-E-2</p>
+
         <p>
-          Every few weeks, <a href="https://www.lawa.org.nz/">LAWA</a> publishes
-          the results of their water testing for beautiful Lake Wakatipu. Rather
+          Every few weeks, <a href="https://www.lawa.org.nz/">LAWA</a> tests the water quality for beautiful Lake Wakatipu. Rather
           than{" "}
           <a href="https://www.lawa.org.nz/explore-data/otago-region/swimming/lake-wakatipu-at-frankton-bay/swimsite">
             check this website
           </a>
-          , sign up to get notified the next time a water quality sample for
-          Lake Wakatipu is released.
+          , sign up for free email alerts.
         </p>
 
         <p>
-          LAWA tests once or twice a month and you will only get notified when there is a new test.
+          Get notified every time there is an update (once or twice a month). Easy as.
         </p>
 
-        <form className='main-form' onSubmit={handleSubmit}>
-          <label htmlFor="email">Sign up for a free:</label>
+        <form className="main-form" onSubmit={handleSubmit}>
+          <label htmlFor="email">Sign up for free water quality alerts:</label>
           <input
             id="email"
             type="email"
             value={email}
             onChange={handleEmailChange}
             className={isValid ? "" : "error"}
+            placeholder="Your Email"
           />
           {!isValid && (
             <p className="error-msg">Please enter a valid email address.</p>
           )}
           <button type="submit" disabled={!isValid}>
-            Submit
+            Let's swim!
           </button>
         </form>
 
@@ -145,7 +152,10 @@ export default function Home({ samples }) {
       </main>
 
       <footer>
-        <p>Created with &#x1F499; by Salo</p>
+        <p>
+          Created with &#x1F499; by{" "}
+          <a href="https://www.linkedin.com/in/salo-mizrachi-0b885432/">Salo</a>
+        </p>
         <Link href="/privacy" className="footerLink">
           Privacy
         </Link>

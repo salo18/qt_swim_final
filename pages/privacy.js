@@ -2,11 +2,11 @@ import Link from 'next/link';
 
 export default function Privacy() {
   return (
-    <div className="container">
+    <div className="terms-privacy-ctn">
       <Link href="/">Back to home</Link>
       <h1>Privacy Policy</h1>
 
-      <p>At qtwateralert.co.nz, we respect the privacy of our users. This Privacy Policy explains how we collect, use, and disclose your personal information when you use our website (the &quot;Website&quot;).</p>
+      <p>At qtswim.com, we respect the privacy of our users. This Privacy Policy explains how we collect, use, and disclose your personal information when you use our website (the &quot;Website&quot;).</p>
 
       <p>1. Information We Collect: We collect personal information that you voluntarily provide to us, such as your name and email address. We may also collect non-personal information, such as your IP address and browser type.</p>
 
@@ -26,7 +26,7 @@ export default function Privacy() {
 
       <p>9. Contact Us: If you have any questions or concerns about this Privacy Policy, please contact us at [insert contact email address here].</p>
 
-      <p>By using the qtwateralert.co.nz website, you consent to the terms of this Privacy Policy. If you do not agree with any of these terms, please do not use the Website.</p>
+      <p>By using the qtswim.com website, you consent to the terms of this Privacy Policy. If you do not agree with any of these terms, please do not use the Website.</p>
     </div>
   );
 }

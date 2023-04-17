@@ -1,16 +1,16 @@
 Next steps:
-- check that email goes to the list
-- set up cron job for api/send
-
-- why isn't status being reported properly? investigate scraper.js
-- update privacy and terms pages to new name
 - add image to homepage
-- buy domain and connect to vercel
-- if the second to last reading has a different `status` value, send a message saying that the status has changed
+
 
 DONE - make cron job that checks the db for the last two readings
 DONE - write email content
 DONE - set up React form and add new users to DB
+DONE - check that email goes to the list
+DONE - check that email list is not exposed --- sent to myself and then as BCC to the list
+DONE - update privacy and terms pages to new name
+DONE - buy domain and connect to vercel
+DONE - When domain is connected, set up cron job for api/send
+
 
 
 challenge with this project
@@ -25,6 +25,8 @@ https://gist.github.com/agungjk/ff542367470d156478f7381af2cf7e60
 https://gist.github.com/kettanaito/56861aff96e6debc575d522dd03e5725#step-1-install-dependencies
 
 - had a hard time getting the cron job to run on vercel. I could get the cron jobs to work locally but not in deployment. I used tryslater.com and it was really easy to set up.
+
+
 
 
 I didn't worry too much about folder structure too much. The one React form component is not in its own file and neither are the CSS styles for the form. I wanted to move fast and I chose to ignore folder structure conventions since it is a very small project.
@@ -53,6 +55,7 @@ this was helpful to make nodemailer work:
 https://github.com/nodemailer/nodemailer/issues/830#issuecomment-817279450
 https://openjavascript.info/2023/01/10/nodemailer-tutorial-send-emails-in-node-js/
 
+send emails to email list as bcc -- https://nodemailer.com/smtp/envelope/
 
 What I learned with this project
 - how to scrape data with puppeteer

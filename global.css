@@ -30,6 +30,11 @@ main {
   margin-bottom: 0;
 }
 
+.terms-privacy-ctn {
+  width: 90%;
+  margin: 5em auto;
+}
+
 .main-form {
   background-color: white;
   padding: 1.25rem;
@@ -194,3 +199,7 @@ code {
   }
 }
 
+
+.img-src {
+  font-size: .75rem;
+}
