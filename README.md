@@ -1,4 +1,5 @@
-Welcome to QT Swim www.qtswim.com 🌊 🌊
+🌊 Welcome to QT Swim 🌊
+Check out the project at www.qtswim.com
 
 I swim in Lake Wakatipu (in Queenstown 🇳🇿) every day. It's cold but I always feel great after. Unfortunately, there have been small spills in the lake and days when I probably shouldn't swim. Otago Regional Council samples the water quality of the lake but there is no way to subscribe to alerts. For example, there was a small spill in March 2023.
 https://crux.org.nz/crux-news/beached-boat-spills-diesel-into-lake-at-frankton/?fbclid=IwAR2ApqXWCE2YKNi5g1QQf7rLz9jT0f6PR9PJytjoEeOjqbbYmtcTZrVQDcA
