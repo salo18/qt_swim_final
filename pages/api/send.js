@@ -61,8 +61,8 @@ export default async function main(req, res) {
         let emailList = rawList.map(x => x.email);
 
         // if there is a new reading with a valid date (not null) AND the last two dates are not the same, send a message
-        // if (lastTwo[0][1] !== null && lastTwo[0][0] !== 'No recent data' && lastTwo[0][1] !== lastTwo[1][1]) {
-        if (1) {
+        if (lastTwo[0][1] !== null && lastTwo[0][0] !== 'No recent data' && lastTwo[0][1] !== lastTwo[1][1]) {
+        // if (1) {
           sendEmail(emailList, lastTwo)
         }
       } finally {
