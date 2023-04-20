@@ -99,6 +99,7 @@ export default function Home({ samples }) {
         />
         <p className='img-src'>Image courtesy of <a href='https://openai.com/product/dall-e-2'>Dall-E 2</a></p>
 
+
         <p>
           Every few weeks, LAWA tests the water quality for beautiful Lake Wakatipu. Rather
           than{" "}
