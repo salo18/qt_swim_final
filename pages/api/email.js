@@ -3,7 +3,7 @@ const uri = process.env.MONGODB_URI;
 const client = new MongoClient(uri);
 const nodemailer = require("nodemailer");
 
-async function sendEmail(userEmail) {
+async function sendWelcomeEmail(userEmail) {
   try {
     let transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
@@ -35,6 +35,7 @@ async function sendEmail(userEmail) {
   }
 }
 
+// add user to "users" collection
 export default async function addEmail(req, res) {
   try {
     async function run() {
@@ -46,7 +47,7 @@ export default async function addEmail(req, res) {
         const { email } = req.body;
         await coll.insertOne({ email, emailAddDate: Date.now() });
 
-        sendEmail(email);
+        sendWelcomeEmail(email);
 
       } finally {
         await client.close();

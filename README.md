@@ -47,8 +47,7 @@ V2 of this app could...
 - Show the time to next cron job (next check will be in X hours)
 - Allow users to unsubscribe from email alerts (currently handled manually)
 - Give option to sign up to text alerts (Twilio?)
-- Add more locations... The app only tracks the results of samples at Frankton Beach. ORC also does samples of Queenstown beach and many other lakes. I could allow users to subscribe for alerts at multiple lakes.
+- Add more locations. The app only tracks the results of samples at Frankton Beach. ORC also does samples of Queenstown beach and many other lakes. I could allow users to subscribe for alerts at multiple lakes.
+- Add a map with the different lakes available for alerts
 
 That's all for now! This was a fun project and I am excited to move on to a new challenge.
-
-- Salo

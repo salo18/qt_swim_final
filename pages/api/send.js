@@ -30,18 +30,17 @@ async function sendEmail(emailList, lastTwo) {
       <p>QT Swim</p>
       <p>PS want to unsubscribe? No worries. Just reply "unsubscribe" and we'll take you off the list.</p>
       `,
-    }
+    };
 
     const info = await transporter.sendMail(message);
 
     // console.log(info.messageId);
     // console.log(info.accepted); // Array of emails that were successful
     // console.log(info.rejected); // Array of unsuccessful emails
-  } catch(err) {
-    console.log(err)
+  } catch (err) {
+    console.log(err);
   }
 }
-
 
 export default async function main(req, res) {
   try {
@@ -52,18 +51,25 @@ export default async function main(req, res) {
         const samples = db.collection("samples");
 
         // get values of last two samples
-        let mongoArr =  await samples.find().sort({cronUpdateDate: -1}).limit(2).toArray();
-        let lastTwo = mongoArr.map(x => [x.status, x.lawaSampleDate]);
+        let mongoArr = await samples
+          .find()
+          .sort({ cronUpdateDate: -1 })
+          .limit(2)
+          .toArray();
+        let lastTwo = mongoArr.map((x) => [x.status, x.lawaSampleDate]);
 
         // populate email list
-        const users = db.collection('users');
+        const users = db.collection("users");
         let rawList = await users.find().toArray();
-        let emailList = rawList.map(x => x.email);
+        let emailList = rawList.map((x) => x.email);
 
         // if there is a new reading with a valid date (not null) AND the last two dates are not the same, send a message
-        if (lastTwo[0][1] !== null && lastTwo[0][0] !== 'No recent data' && lastTwo[0][1] !== lastTwo[1][1]) {
-        // if (1) {
-          sendEmail(emailList, lastTwo)
+        if (
+          lastTwo[0][1] !== null &&
+          lastTwo[0][0] !== "No recent data" &&
+          lastTwo[0][1] !== lastTwo[1][1]
+        ) {
+          sendEmail(emailList, lastTwo);
         }
       } finally {
         await client.close();
@@ -71,7 +77,7 @@ export default async function main(req, res) {
     }
     connectDB().catch(console.dir);
 
-    res.status(200).json({ message: 'email sent successfully'});
+    res.status(200).json({ message: "email sent successfully" });
   } catch (err) {
     res.status(500).json({ error: "internal error", message: err });
     console.log(err);
