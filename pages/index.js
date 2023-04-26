@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Head from "next/head";
-import Link from "next/link";
 import { useRouter } from "next/router";
 import formatDistance from "date-fns/formatDistance";
 // import React, { useState } from "react";
 import Form from '../components/Form'
+import Footer from '../components/Footer'
+
 
 const { MongoClient } = require("mongodb");
 const uri = process.env.MONGODB_URI;
@@ -41,44 +42,6 @@ export default function Home({ samples }) {
   // const refreshData = () => {
   //   router.replace(router.asPath);
   // };
-
-  // const [email, setEmail] = useState("");
-  // const [isValid, setIsValid] = useState(true);
-
-  // function handleEmailChange(event) {
-  //   const inputEmail = event.target.value;
-  //   setEmail(inputEmail);
-  //   setIsValid(validateEmail(inputEmail));
-  // }
-
-  // function validateEmail(inputEmail) {
-  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  //   return emailRegex.test(inputEmail);
-  // }
-
-  // function handleSubmit(event) {
-  //   event.preventDefault();
-
-  //   fetch("/api/email", {
-  //     method: "POST",
-  //     headers: {
-  //       "Content-Type": "application/json",
-  //     },
-  //     body: JSON.stringify({ email }),
-  //   })
-  //     .then((response) => {
-  //       if (!response.ok) {
-  //         throw new Error("Failed to save email");
-  //       }
-  //       alert("Success! You're in :) Make sure to check your spam folder.");
-  //     })
-  //     .catch((error) => {
-  //       console.error(error);
-  //       alert("Ooops that didn't work, try again");
-  //     });
-
-  //   setEmail("");
-  // }
 
   return (
     <div className="container">
@@ -136,20 +99,8 @@ export default function Home({ samples }) {
           })}
         </div>
       </main>
-
-      <footer>
-        <p>
-          Created with &#x1F499; by{" "}
-          <a href="https://www.linkedin.com/in/salo-mizrachi-0b885432/">Salo</a>
-        </p>
-        <p><a href='https://github.com/salo18/qt_swim_final'>Code for this project</a></p>
-        <Link href="/privacy" className="footerLink">
-          Privacy
-        </Link>
-        <Link href="/terms" className="footerLink">
-          Terms and Conditions
-        </Link>
-      </footer>
+      
+      <Footer />
     </div>
   );
 }

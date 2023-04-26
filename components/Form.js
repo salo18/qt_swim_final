@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 
 
-export default function Form(props) {
-  console.log(props)
-
+export default function Form() {
   const [email, setEmail] = useState("");
   const [isValid, setIsValid] = useState(true);
 
