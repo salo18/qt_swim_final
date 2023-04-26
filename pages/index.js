@@ -3,7 +3,8 @@ import Head from "next/head";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import formatDistance from "date-fns/formatDistance";
-import React, { useState } from "react";
+// import React, { useState } from "react";
+import Form from '../components/Form'
 
 const { MongoClient } = require("mongodb");
 const uri = process.env.MONGODB_URI;
@@ -41,43 +42,43 @@ export default function Home({ samples }) {
   //   router.replace(router.asPath);
   // };
 
-  const [email, setEmail] = useState("");
-  const [isValid, setIsValid] = useState(true);
+  // const [email, setEmail] = useState("");
+  // const [isValid, setIsValid] = useState(true);
 
-  function handleEmailChange(event) {
-    const inputEmail = event.target.value;
-    setEmail(inputEmail);
-    setIsValid(validateEmail(inputEmail));
-  }
+  // function handleEmailChange(event) {
+  //   const inputEmail = event.target.value;
+  //   setEmail(inputEmail);
+  //   setIsValid(validateEmail(inputEmail));
+  // }
 
-  function validateEmail(inputEmail) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(inputEmail);
-  }
+  // function validateEmail(inputEmail) {
+  //   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  //   return emailRegex.test(inputEmail);
+  // }
 
-  function handleSubmit(event) {
-    event.preventDefault();
+  // function handleSubmit(event) {
+  //   event.preventDefault();
 
-    fetch("/api/email", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ email }),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Failed to save email");
-        }
-        alert("Success! You're in :) Make sure to check your spam folder.");
-      })
-      .catch((error) => {
-        console.error(error);
-        alert("Ooops that didn't work, try again");
-      });
+  //   fetch("/api/email", {
+  //     method: "POST",
+  //     headers: {
+  //       "Content-Type": "application/json",
+  //     },
+  //     body: JSON.stringify({ email }),
+  //   })
+  //     .then((response) => {
+  //       if (!response.ok) {
+  //         throw new Error("Failed to save email");
+  //       }
+  //       alert("Success! You're in :) Make sure to check your spam folder.");
+  //     })
+  //     .catch((error) => {
+  //       console.error(error);
+  //       alert("Ooops that didn't work, try again");
+  //     });
 
-    setEmail("");
-  }
+  //   setEmail("");
+  // }
 
   return (
     <div className="container">
@@ -113,23 +114,7 @@ export default function Home({ samples }) {
           Get notified every time there is an update (once or twice a month). Easy as.
         </p>
 
-        <form className="main-form" onSubmit={handleSubmit}>
-          <label htmlFor="email">Sign up for free water quality alerts:</label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            onChange={handleEmailChange}
-            className={isValid ? "" : "error"}
-            placeholder="Your Email"
-          />
-          {!isValid && (
-            <p className="error-msg">Please enter a valid email address.</p>
-          )}
-          <button type="submit" disabled={!isValid}>
-            Let&apos;s swim!
-          </button>
-        </form>
+        <Form />
 
         <h2>Recent Samples:</h2>
         {/* <button onClick={refreshData}>Refresh Data</button> */}
