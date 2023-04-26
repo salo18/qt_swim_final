@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Head from "next/head";
 import { useRouter } from "next/router";
-import formatDistance from "date-fns/formatDistance";
-// import React, { useState } from "react";
 import Form from '../components/Form'
 import Footer from '../components/Footer'
-
+import Grid from '../components/Grid'
 
 const { MongoClient } = require("mongodb");
 const uri = process.env.MONGODB_URI;
@@ -78,28 +76,10 @@ export default function Home({ samples }) {
         </p>
 
         <Form />
-
-        <h2>Recent Samples:</h2>
-        {/* <button onClick={refreshData}>Refresh Data</button> */}
-
-        <div className="grid">
-          {samples.map((sample) => {
-            return (
-              <div key={sample.cronUpdateDate} className="card">
-                {/* <h3>{sample.lawaSampleDate}</h3> */}
-                <p>
-                  Lake Status: <strong>{sample.status}</strong>
-                </p>
-                <p>
-                  Time since we last checked LAWA:{" "}
-                  {formatDistance(sample.cronUpdateDate, new Date())}
-                </p>
-              </div>
-            );
-          })}
-        </div>
+        
+        <Grid samples={samples} />
       </main>
-      
+
       <Footer />
     </div>
   );
